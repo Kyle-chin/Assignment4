@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -15,10 +16,10 @@ import java.util.ArrayList;
 
 public class SelectionActivity extends AppCompatActivity {
 
-    Spinner ValCharacters;
 
-    TextView ttv;
+    TextView tvinstruct;
     int[] ValHeroesArray;
+    GridView gview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,8 @@ public class SelectionActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Valorant Character Selection");
         ValCharacters = findViewById(R.id.spinner_Valorant);
 
-        ttv = findViewById(R.id.trialTV);
+        gview = findViewById(R.id.gridviewid);
+        tvinstruct = findViewById(R.id.tvinstruct);
         ArrayList Valheros = new ArrayList<String>();
         Valheros.add("Select a Character...");
         Valheros.add("Killjoy, Mechanic Controller");

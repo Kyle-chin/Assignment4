@@ -6,20 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".SelectionActivity">
 
-    <Spinner
-        android:id="@+id/spinner_Valorant"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvinstruct"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/trialTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <GridView
+        android:id="@+id/gridviewid"
+        android:layout_width="412dp"
+        android:layout_height="602dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvinstruct"
+        app:layout_constraintVertical_bias="0.567" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
