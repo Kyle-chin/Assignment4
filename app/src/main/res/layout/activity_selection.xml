@@ -19,6 +19,7 @@
 
     <GridView
         android:id="@+id/gridviewid"
+        android:numColumns="3"
         android:layout_width="412dp"
         android:layout_height="602dp"
         app:layout_constraintBottom_toBottomOf="parent"

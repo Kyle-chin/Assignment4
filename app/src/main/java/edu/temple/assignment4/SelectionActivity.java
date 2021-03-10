@@ -26,7 +26,6 @@ public class SelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
         getSupportActionBar().setTitle("Valorant Character Selection");
-        ValCharacters = findViewById(R.id.spinner_Valorant);
 
         gview = findViewById(R.id.gridviewid);
         tvinstruct = findViewById(R.id.tvinstruct);
@@ -45,38 +44,19 @@ public class SelectionActivity extends AppCompatActivity {
         ImageAdapter imageAdapter = new ImageAdapter(this, Valheros, ValHeroesArray);
 
 
-        ValCharacters.setAdapter(imageAdapter);
+        gview.setAdapter(imageAdapter);
 
-        ValCharacters.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if(parent.getItemAtPosition(position).equals("Select a Character...")){
-
-                }
-                else{
-                    /*String item = parent.getItemAtPosition(position).toString();
-                    Toast.makeText(parent.getContext(), "Selected: " +item, Toast.LENGTH_SHORT).show();*/
-
-
-                    String value = (String)Valheros.get(position);
-                    int heroPos = ValHeroesArray[position];
-                    Intent launchIntent = new Intent(SelectionActivity.this, displayActivity.class);
-                    launchIntent.putExtra("number", value);
-                    launchIntent.putExtra("heropos", heroPos);
-                    startActivity(launchIntent);
-
-                    Toast.makeText(SelectionActivity.this, "Character Selected", Toast.LENGTH_SHORT).show();
-                    //showPicture(position);
-                    //characterDescription.setText((parent.getItemAtPosition(position)).toString());
-                    //characterDescription.setTextSize(30);
-                    //characterDescription.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                }
-
+        gview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                int heroPos = ValHeroesArray[position];
+                String value = (String)Valheros.get(position);
+                Intent launchIntent = new Intent(SelectionActivity.this, displayActivity.class);
+                launchIntent.putExtra("number", value);
+                launchIntent.putExtra("heropos", heroPos);
+                startActivity(launchIntent);
 
             }
 
-            @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
