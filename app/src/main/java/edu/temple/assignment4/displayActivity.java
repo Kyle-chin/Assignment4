@@ -27,7 +27,7 @@ public class displayActivity extends AppCompatActivity {
             int heroImg = extras.getInt("heropos");
             characterDescription.setGravity(Gravity.CENTER);
             characterDescription.setText(value);
-
+            characterDescription.setTextSize(30);
             imageView.setImageResource(heroImg);
 
             //characterDescription.setText((parent.getItemAtPosition(position)).toString());

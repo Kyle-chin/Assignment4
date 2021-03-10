@@ -47,16 +47,38 @@ public class ImageAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView textView = new TextView(context);
+        ImageView imageView;
         textView.setText(items.get(position));
 
-        textView.setPadding(10, 10, 0, 0);
-        textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        textView.setTextSize(22);
+        if (convertView == null) {
 
+            textView = new TextView(context);
+            Typeface btf = Typeface.defaultFromStyle(Typeface.BOLD);
+            textView.setTypeface(btf);
+            textView.setTextColor(Color.WHITE);
+            textView.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 400));
+            textView.setText(items.get(position));
+            textView.setGravity(Gravity.CENTER);
+
+            imageView = new ImageView(context);
+            imageView.setLayoutParams(new GridView.LayoutParams(300, 300));
+            imageView.setLayoutParams(new ViewGroup.LayoutParams(300, 300));
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            imageView.setPadding(30, 25, 30, 25);
+        }
+        else{
+            textView = (TextView) convertView;
+        }
+       // textView.setPadding(10, 10, 0, 0);
+        //textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+       // textView.setTextSize(22);
+        textView.setBackgroundResource(ValHeroesArray[position]);
+        textView.setText(items.get(position));
+        //imageView.setImageResource(ValHeroesArray[position]);
         return textView;
     }
 
-    @Override
+    /*@Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         TextView textView = null;
         ImageView imageView;
@@ -81,7 +103,7 @@ public class ImageAdapter extends BaseAdapter {
         }
         else{
             imageView = (ImageView) convertView;
-            /*linearLayout = new LinearLayout(context);
+            linearLayout = new LinearLayout(context);
             textView = new TextView(context);
             imageView = new ImageView(context);
             textView.setPadding(10, 15, 15, 15);
@@ -100,11 +122,11 @@ public class ImageAdapter extends BaseAdapter {
         imageView.setImageResource(ValHeroesArray[position]);
         textView.setText(items.get(position));
 
-        return linearLayout;*/
+        return linearLayout;
         }
         textView.setBackgroundResource(ValHeroesArray[position]);
         textView.setText(items.get(position));
         //imageView.setImageResource(ValHeroesArray[position]);
         return textView;
-    }
+    }*/
 }
