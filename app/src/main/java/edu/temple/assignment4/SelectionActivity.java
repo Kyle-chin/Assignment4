@@ -29,16 +29,27 @@ public class SelectionActivity extends AppCompatActivity {
 
         gview = findViewById(R.id.gridviewid);
         tvinstruct = findViewById(R.id.tvinstruct);
-        ArrayList Valheros = new ArrayList<String>();
-        Valheros.add("Select a Character...");
-        Valheros.add("Killjoy, Mechanic Controller");
-        Valheros.add("Omen, Smoke and Mind Game Controller");
-        Valheros.add("Phoenix, Fire Duelist");
-        Valheros.add("Sage, Combat Medic");
-        Valheros.add("Sova, Technological Hunter");
-        Valheros.add("Yoru, Rift Walker");
+        tvinstruct.setText("Please Select a Character...");
+        tvinstruct.setTextSize(30);
 
-        ValHeroesArray = new int[]{0, R.drawable.killjoy, R.drawable.omen, R.drawable.phoenix_artwork, R.drawable.sage, R.drawable.sova, R.drawable.yoru};
+        ArrayList ValDesc = new ArrayList<String>();
+        ValDesc.add("Killjoy - Mechanic Controller");
+        ValDesc.add("Omen - Smoke and Mind Game Controller");
+        ValDesc.add("Phoenix - Fire Duelist");
+        ValDesc.add("Sage - Combat Medic");
+        ValDesc.add("Sova - Technological Hunter");
+        ValDesc.add("Yoru - Rift Walker");
+
+        ArrayList Valheros = new ArrayList<String>();
+        Valheros.add("Killjoy");
+        Valheros.add("Omen,");
+        Valheros.add("Phoenix");
+        Valheros.add("Sage");
+        Valheros.add("Sova");
+        Valheros.add("Yoru");
+
+
+        ValHeroesArray = new int[]{ R.drawable.killjoy, R.drawable.omen, R.drawable.phoenix_artwork, R.drawable.sage, R.drawable.sova, R.drawable.yoru};
 
         //ArrayAdapter adapter = new ArrayAdapter( this, android.R.layout.simple_list_item_1, Valheros);
         ImageAdapter imageAdapter = new ImageAdapter(this, Valheros, ValHeroesArray);
@@ -49,7 +60,7 @@ public class SelectionActivity extends AppCompatActivity {
         gview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 int heroPos = ValHeroesArray[position];
-                String value = (String)Valheros.get(position);
+                String value = (String) ValDesc.get(position);
                 Intent launchIntent = new Intent(SelectionActivity.this, displayActivity.class);
                 launchIntent.putExtra("number", value);
                 launchIntent.putExtra("heropos", heroPos);
