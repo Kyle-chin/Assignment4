@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Affectation4</string>
+    <string name="titled">Sélection de personnages vaillants</string>
+    <string name="Displayed">Afficher la sélection de caractères</string>
+    <string name="instruct">Veuillez sélectionner un personnage ...</string>
+
+    <string-array name="ValChars_array">
+        <item>Killjoy</item>
+        <item>Présage</item>
+        <item>Phénix</item>
+        <item>Sage</item>
+        <item>Sova</item>>
+        <item>Yoru</item>
+    </string-array>
+    <string-array name="ValDesc_array">
+        <item>Killjoy - Contrôleur mécanique</item>
+        <item>Présage - Manette de jeu Smoke and Mind</item>
+        <item>Phénix - Duelliste de feu</item>
+        <item>Sage - Médecin de combat</item>
+        <item>Sova - Chasseur technologique</item>
+        <item>Yoru - Rift Walker</item>
+    </string-array>
+</resources>
