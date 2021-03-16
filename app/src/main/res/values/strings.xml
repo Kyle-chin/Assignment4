@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Assignment4</string>
+    <string name="titled">Valorant Character Selection</string>
+    <string name="instruct">Please Select a Character...</string>
+    <string-array name="ValChars_array">
+        <item>Killjoy</item>
+        <item>Omen</item>
+        <item>Phoenix</item>
+        <item>Sage</item>
+        <item>Sova</item>>
+        <item>Yoru</item>
+    </string-array>
+    <string-array name="ValDesc_array">
+        <item>Killjoy - Mechanic Controller</item>
+        <item>Omen - Smoke and Mind Game Controller</item>
+        <item>Phoenix - Fire Duelist</item>
+        <item>Sage - Combat Medic</item>
+        <item>Sova - Technological Hunter</item>
+        <item>Yoru - Rift Walker</item>
+    </string-array>
 </resources>
