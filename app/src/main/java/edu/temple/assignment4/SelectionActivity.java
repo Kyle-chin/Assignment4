@@ -28,28 +28,30 @@ public class SelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
-        getSupportActionBar().setTitle("Valorant Character Selection");
+
+        Resources res = getResources();
+        String title = res.getString(R.string.titled);
+        getSupportActionBar().setTitle(title);
+
 
         gview = findViewById(R.id.gridviewid);
         tvinstruct = findViewById(R.id.tvinstruct);
-        tvinstruct.setText("Please Select a Character...");
+        String instruc = res.getString(R.string.instruct);
+        tvinstruct.setText(instruc);
         tvinstruct.setTextSize(30);
 
-        Resources res = getResources();
-        String[] chars = res.getStringArray(R.array.ValChars_array);
-        List<String> list= Arrays.asList(chars);
-        ArrayList ValDesc = new ArrayList<String>(list);
-
-
+        String[] descrips = res.getStringArray(R.array.ValDesc_array);
+        List<String> desc= Arrays.asList(descrips);
+        ArrayList ValDesc = new ArrayList<String>(desc);
         /*ValDesc.add("Killjoy - Mechanic Controller");
         ValDesc.add("Omen - Smoke and Mind Game Controller");
         ValDesc.add("Phoenix - Fire Duelist");
         ValDesc.add("Sage - Combat Medic");
         ValDesc.add("Sova - Technological Hunter");
         ValDesc.add("Yoru - Rift Walker");*/
-
-
-        ArrayList Valheros = new ArrayList<String>();
+        String[] chars = res.getStringArray(R.array.ValChars_array);
+        List<String> characters = Arrays.asList(chars);
+        ArrayList Valheros = new ArrayList<String>(characters);
         /*Valheros.add("Killjoy");
         Valheros.add("Omen,");
         Valheros.add("Phoenix");
