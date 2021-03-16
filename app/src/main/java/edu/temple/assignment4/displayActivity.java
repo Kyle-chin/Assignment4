@@ -3,6 +3,7 @@ package edu.temple.assignment4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.ImageView;
@@ -17,7 +18,9 @@ public class displayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
-        getSupportActionBar().setTitle("Display Character Selection");
+        Resources res = getResources();
+        String displ = res.getString(R.string.Displayed);
+        getSupportActionBar().setTitle(displ);
         characterDescription = findViewById(R.id.textViewID);
         imageView = findViewById(R.id.imageViewID);
 

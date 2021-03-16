@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Assignment4</string>
     <string name="titled">Valorant Character Selection</string>
+    <string name="Displayed">Display Character Selection</string>
     <string name="instruct">Please Select a Character...</string>
+
     <string-array name="ValChars_array">
         <item>Killjoy</item>
         <item>Omen</item>

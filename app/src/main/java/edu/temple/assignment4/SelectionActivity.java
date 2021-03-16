@@ -30,6 +30,7 @@ public class SelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selection);
 
         Resources res = getResources();
+
         String title = res.getString(R.string.titled);
         getSupportActionBar().setTitle(title);
 
